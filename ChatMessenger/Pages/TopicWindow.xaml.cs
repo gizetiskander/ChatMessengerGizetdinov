@@ -34,17 +34,26 @@ namespace ChatMessenger.Pages
 
         private void LeaveChatBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ChatMessage chatMessage = dbEntities.ChatMessage.FirstOrDefault();
+            chatMessage.Id_Chatroom = message.Id_Chatroom;
+            chatMessage.Id_Employee = LoginWindow.employee.Id_Employee;
+            dbEntities.ChatMessage.Remove(chatMessage);
+            MessageBox.Show("Успешно");
+            ChitChatTopicWindow chitChatTopicWindow = new ChitChatTopicWindow();
+            chitChatTopicWindow.Show();
+            this.Close();
         }
 
         private void ChangeTopicBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ChitChatTopicWindow chitChatTopicWindow = new ChitChatTopicWindow();
+            chitChatTopicWindow.Show();
+            this.Close();
         }
 
         private void AddUserBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void SendBtn_Click(object sender, RoutedEventArgs e)
@@ -53,7 +62,7 @@ namespace ChatMessenger.Pages
             chatMessage.Message = MessageTB.Text;
             chatMessage.Date = DateTime.Now;
             var chatRoom = ((Employee)LoginWindow.employee).Id_Employee;
-            chatMessage.Id_Chatroom = chatRoom;
+            chatMessage.Id_Chatroom = message.Id_Chatroom;
             chatMessage.Id_Employee = chatRoom;
             ChatLst.ItemsSource = message.Chatroom.ChatMessage.ToList();
             dbEntities.ChatMessage.Add(chatMessage);

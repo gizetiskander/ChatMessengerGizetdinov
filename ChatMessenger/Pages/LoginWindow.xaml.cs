@@ -46,11 +46,6 @@ namespace ChatMessenger.Pages
                         this.Close();
                     }
                 }
-                else if (emp.UserName != UserNameTB.Text.Trim() || emp.Password != PasswordTB.Password.Trim())
-                {
-                    MessageBox.Show("Неверные данные!");
-                    return;
-                }
             }
         }
 
