@@ -58,5 +58,17 @@ namespace ChatMessenger.Pages
         {
             Environment.Exit(0);
         }
+
+        private void RembMeCB_Checked(object sender, RoutedEventArgs e)
+        {
+            if (RembMeCB.IsChecked == true)
+            {
+                MessageBox.Show("Хорошая работа, Олег!");
+            }
+            else if (RembMeCB.IsChecked == false)
+            {
+                MessageBox.Show("Грустно(((");
+            }
+        }
     }
 }
