@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatMessenger.db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace ChatMessenger.Pages
     /// </summary>
     public partial class TopicWindow : Window
     {
-        public TopicWindow()
+        public Chat_dbEntities dbEntities = new Chat_dbEntities();
+        ChatMessage message;
+        public TopicWindow(ChatMessage chatMessager)
         {
             InitializeComponent();
+            this.message = chatMessager;
         }
     }
 }

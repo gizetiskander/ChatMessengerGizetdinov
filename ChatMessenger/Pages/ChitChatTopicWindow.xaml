@@ -29,21 +29,25 @@
         <TextBox x:Name="NameTB" HorizontalAlignment="Left" BorderThickness="0" Margin="98,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="32" FontSize="18" 
                  FontFamily="Georgia"/>
         <TextBlock Text="Your open chatrooms" HorizontalAlignment="Left" Margin="39,167,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Georgia"/>
-        <ListView x:Name="TopicLst" Margin="39,188,24,71" MouseDoubleClick="TopicLst_MouseDoubleClick">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1" Height="Auto" Width="Auto">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="377" >
-                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" >
-                                <TextBlock  Height="80" Width="185" Margin="15" x:Name="Namelbl" Text="{Binding Chatroom.Topic}"/>
-                            </StackPanel>
-                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" >
-                                <TextBlock  Height="80" Width="152" Margin="15" x:Name="DateLbl" Text="{Binding Date}"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <ListView x:Name="TopicLst" Margin="39,188,24,57" MouseDoubleClick="TopicLst_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Topic" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Chatroom.Topic}" FontSize="14" FontFamily="Georgia" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Last message" Width="180">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Date}" FontSize="14" FontFamily="Georgia" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
         </ListView>
         <Button x:Name="EmpFinderBtn" Content="Employee Finder" BorderBrush="Black" Background="White" BorderThickness="1" HorizontalAlignment="Left" Margin="39,409,0,0" VerticalAlignment="Top" Height="29" 
                 Width="142" FontFamily="Georgia" FontSize="16" Click="EmpFinderBtn_Click">
