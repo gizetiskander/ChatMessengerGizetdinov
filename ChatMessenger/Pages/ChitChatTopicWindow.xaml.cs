@@ -23,5 +23,10 @@ namespace ChatMessenger.Pages
         {
             InitializeComponent();
         }
+
+        private void EmpFinderBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

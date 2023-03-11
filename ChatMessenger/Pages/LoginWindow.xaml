@@ -31,10 +31,18 @@
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <PasswordBox x:Name="PasswordTB"  HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Margin="195,117,0,0" 
                  VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="CancelBtn" Content="Cancel" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left"  
-                Margin="184,226,0,0" VerticalAlignment="Top" Height="29" Width="142" FontFamily="Georgia" Click="CancelBtn_Click" FontSize="18"/>
-        <Button x:Name="LogBtn" Content="OK" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Margin="27,226,0,0" VerticalAlignment="Top" 
-                Height="29" Width="142" FontFamily="Georgia" FontSize="18" Click="LogBtn_Click"/>
+        <Button x:Name="CancelBtn" Content="Cancel" BorderBrush="Black" BorderThickness="2" Background="White" HorizontalAlignment="Left"  
+                Margin="184,226,0,0" VerticalAlignment="Top" Height="29" Width="142" FontFamily="Georgia" Click="CancelBtn_Click" FontSize="18">
+            <Button.Effect>
+                <DropShadowEffect Color="Black"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="LogBtn" Content="OK" BorderBrush="Black" BorderThickness="2" Background="White" HorizontalAlignment="Left" Margin="27,226,0,0" VerticalAlignment="Top" 
+                Height="29" Width="142" FontFamily="Georgia" FontSize="18" Click="LogBtn_Click">
+            <Button.Effect>
+                <DropShadowEffect Color="Black"/>
+            </Button.Effect>
+        </Button>
         <CheckBox x:Name="RembMeCB" Content="Remember me" HorizontalAlignment="Left" Margin="184,178,0,0" VerticalAlignment="Top" Height="22" Width="140" FontSize="18" Checked="RembMeCB_Checked" FontFamily="Georgia"/>
     </Grid>
 </Window>
