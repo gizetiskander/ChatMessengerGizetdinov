@@ -27,5 +27,25 @@ namespace ChatMessenger.Pages
             InitializeComponent();
             this.message = chatMessager;
         }
+
+        private void LeaveChatBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChangeTopicBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddUserBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SendBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

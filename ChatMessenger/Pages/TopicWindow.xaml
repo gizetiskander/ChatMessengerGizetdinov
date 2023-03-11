@@ -5,8 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatMessenger.Pages"
         mc:Ignorable="d"
-        Title="TopicWindow" Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+        Title="TopicWindow" Height="450" Width="473" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="PressButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="Border" Background="Transparent" BorderThickness="1" BorderBrush="Black">
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="Blue" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    </Window.Resources>
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Topic:" FontSize="14" FontFamily="Georgia" VerticalAlignment="Top" Width="44" Margin="10,1,0,0"/>
+        <TextBox x:Name="TopicTB" HorizontalAlignment="Left" Margin="53,1,0,0" TextWrapping="Wrap" BorderBrush="White" VerticalAlignment="Top" Width="276" FontFamily="Georgia"/>
+        <Button x:Name="AddUserBtn" Content="Add User" BorderBrush="Black"  Background="White" BorderThickness="2" HorizontalAlignment="Left" Margin="0,231,0,0" VerticalAlignment="Top" Height="29" Width="142" 
+                FontFamily="Georgia" FontSize="16" Click="AddUserBtn_Click"/>
+        <Button x:Name="ChangeTopicBtn" Content="Change Topic" BorderBrush="Black" Background="White" BorderThickness="2" HorizontalAlignment="Left" Margin="0,260,0,0" VerticalAlignment="Top" Height="29" Width="142" 
+                FontFamily="Georgia" FontSize="16" Click="ChangeTopicBtn_Click"/>
+        <Button x:Name="LeaveChatBtn" Content="Leave Chatroom" BorderBrush="Black"  Background="White" BorderThickness="2" HorizontalAlignment="Left" Margin="0,289,0,0" VerticalAlignment="Top" Height="29" Width="142" 
+                FontFamily="Georgia" FontSize="16" Click="LeaveChatBtn_Click"/>
+        <TextBox HorizontalAlignment="Left" BorderThickness="3" BorderBrush="Black " Margin="0,318,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="382" Height="143"/>
+        <Button x:Name="SendBtn" Content="Send" Background="LightBlue" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Margin="382,318,0,0" 
+                VerticalAlignment="Top" Height="143" Width="91" FontFamily="Georgia" FontSize="16" Click="SendBtn_Click"/>
+        <ListView x:Name="MemberLst" Margin="0,22,331,219">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border  BorderThickness="1" Height="Auto" Width="111">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="95" RenderTransformOrigin="0.5,0.5" >
+                            <StackPanel VerticalAlignment="Center" Height="41" >
+                                <TextBlock  Height="25" Width="67" Margin="15" x:Name="NameTB" FontFamily="Georgia" Text="{Binding Employee.Name}" RenderTransformOrigin="0.5,0.5"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="ChatLst" Margin="142,22,0,132">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border  BorderThickness="1" Height="Auto" Width="Auto">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="320" Height="46" >
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                <TextBlock  Height="44" Width="60" Margin="15" FontFamily="Georgia" x:Name="DateTB" Text="{Binding Date}"/>
+                            </StackPanel>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                <TextBlock  Height="44" Width="53" Margin="15" FontFamily="Georgia" x:Name="NameTB" Text="{Binding Name}"/>
+                            </StackPanel>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                <TextBlock  Height="44" Width="118" Margin="15" FontFamily="Georgia" x:Name="MessageTB" Text="{Binding Message}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>
