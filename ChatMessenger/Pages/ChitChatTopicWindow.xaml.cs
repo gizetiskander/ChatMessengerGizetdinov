@@ -33,5 +33,10 @@ namespace ChatMessenger.Pages
         {
 
         }
+
+        private void TopicLst_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
