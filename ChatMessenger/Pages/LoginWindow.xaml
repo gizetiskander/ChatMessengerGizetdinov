@@ -29,8 +29,8 @@
         <Label Content="Password" HorizontalAlignment="Left" Margin="41,113,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Georgia"/>
         <TextBox x:Name="UserNameTB" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Margin="195,68,0,0" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="PasswordTB"  HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Margin="195,117,0,0" 
-                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="PasswordTB"  HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Margin="195,117,0,0" 
+                 VerticalAlignment="Top" Width="120"/>
         <Button x:Name="CancelBtn" Content="Cancel" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left"  
                 Margin="184,226,0,0" VerticalAlignment="Top" Height="29" Width="142" FontFamily="Georgia" Click="CancelBtn_Click" FontSize="18"/>
         <Button x:Name="LogBtn" Content="OK" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Margin="27,226,0,0" VerticalAlignment="Top" 
