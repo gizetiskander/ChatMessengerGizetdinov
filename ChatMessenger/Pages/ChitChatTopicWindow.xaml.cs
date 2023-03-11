@@ -28,5 +28,10 @@ namespace ChatMessenger.Pages
         {
 
         }
+
+        private void CloseBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
