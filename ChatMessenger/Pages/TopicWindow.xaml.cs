@@ -26,6 +26,10 @@ namespace ChatMessenger.Pages
         {
             InitializeComponent();
             this.message = chatMessager;
+            TopicTB.Text = message.Chatroom.Topic;
+            var chatRoom = ((Employee)LoginWindow.employee).Id_Employee;
+            MemberLst.ItemsSource = dbEntities.ChatMessage.Where(x => x.Id_Chatroom == chatRoom).ToList();
+            ChatLst.ItemsSource = message.Chatroom.ChatMessage.ToList();
         }
 
         private void LeaveChatBtn_Click(object sender, RoutedEventArgs e)
@@ -45,7 +49,17 @@ namespace ChatMessenger.Pages
 
         private void SendBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ChatMessage chatMessage = new ChatMessage();
+            chatMessage.Message = MessageTB.Text;
+            chatMessage.Date = DateTime.Now;
+            var chatRoom = ((Employee)LoginWindow.employee).Id_Employee;
+            chatMessage.Id_Chatroom = chatRoom;
+            chatMessage.Id_Employee = chatRoom;
+            ChatLst.ItemsSource = message.Chatroom.ChatMessage.ToList();
+            dbEntities.ChatMessage.Add(chatMessage);
+            dbEntities.SaveChanges();
+            MessageBox.Show("Отправлено!");
+            MessageTB.Clear();
         }
     }
 }

@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id_ChatMessage" />
           </Key>
-          <Property Name="Id_ChatMessage" Type="int" Nullable="false" />
+          <Property Name="Id_ChatMessage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Employee" Type="int" Nullable="false" />
           <Property Name="Id_Chatroom" Type="int" Nullable="false" />
           <Property Name="Date" Type="datetime" />
@@ -155,7 +155,7 @@
           <Key>
             <PropertyRef Name="Id_ChatMessage" />
           </Key>
-          <Property Name="Id_ChatMessage" Type="Int32" Nullable="false" />
+          <Property Name="Id_ChatMessage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Employee" Type="Int32" Nullable="false" />
           <Property Name="Id_Chatroom" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="DateTime" Precision="3" />

@@ -68,39 +68,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="db\ChatdbModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChatdbModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\ChatdbModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChatdbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\ChatdbModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChatdbModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="db\ChatMessage.cs">
-      <DependentUpon>ChatdbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Chatroom.cs">
-      <DependentUpon>ChatdbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Department.cs">
-      <DependentUpon>ChatdbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Employee.cs">
-      <DependentUpon>ChatdbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\GroupChat.cs">
-      <DependentUpon>ChatdbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\sysdiagrams.cs">
-      <DependentUpon>ChatdbModel.tt</DependentUpon>
-    </Compile>
     <Page Include="Pages\ChitChatTopicWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -119,6 +86,39 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="db\ChatDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChatDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ChatDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChatDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ChatDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChatDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="db\ChatMessage.cs">
+      <DependentUpon>ChatDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Chatroom.cs">
+      <DependentUpon>ChatDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Department.cs">
+      <DependentUpon>ChatDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Employee.cs">
+      <DependentUpon>ChatDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\GroupChat.cs">
+      <DependentUpon>ChatDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\sysdiagrams.cs">
+      <DependentUpon>ChatDbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ChitChatTopicWindow.xaml.cs">
       <DependentUpon>ChitChatTopicWindow.xaml</DependentUpon>
     </Compile>
@@ -148,12 +148,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="db\ChatdbModel.edmx">
+    <EntityDeploy Include="db\ChatDbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ChatdbModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ChatDbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="db\ChatdbModel.edmx.diagram">
-      <DependentUpon>ChatdbModel.edmx</DependentUpon>
+    <None Include="db\ChatDbModel.edmx.diagram">
+      <DependentUpon>ChatDbModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -168,19 +168,19 @@
     <Folder Include="Pages\Res\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="db\ChatdbModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ChatdbModel.Context.cs</LastGenOutput>
-      <DependentUpon>ChatdbModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="db\ChatdbModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ChatdbModel.edmx</DependentUpon>
-      <LastGenOutput>ChatdbModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="db\ChatDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ChatDbModel.edmx</DependentUpon>
+      <LastGenOutput>ChatDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db\ChatDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ChatDbModel.edmx</DependentUpon>
+      <LastGenOutput>ChatDbModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
